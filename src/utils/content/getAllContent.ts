@@ -1,4 +1,3 @@
-// utils/fetchContents.ts
 import { collection, getDocs, getDoc } from "firebase/firestore";
 import { db } from "@/utils/firebase/config";
 import { Content, ContentWithUsername } from "../types";

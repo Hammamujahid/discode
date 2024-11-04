@@ -3,7 +3,7 @@ import { collection, addDoc, Timestamp, doc } from "firebase/firestore";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { auth, db } from "@/utils/firebase/config";
 import axios from "axios";
-import AddTopicToContent from "../topic/add";
+import AddTopicToContent from "../topic/addToContent";
 
 interface PopupProps {
   isOpen: boolean;

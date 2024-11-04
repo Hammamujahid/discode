@@ -1,4 +1,5 @@
 import { doc, Timestamp } from "firebase/firestore";
+import { ReactNode } from "react";
 
 export interface Content {
   id: string;
@@ -16,3 +17,12 @@ export interface Content {
 export interface ContentWithUsername extends Omit<Content, 'userId'> {
   username: string;
 }
+
+export interface SidebarProps {
+    children: ReactNode;
+  }
+
+  export interface Topic {
+    id: string;
+    name: string;
+  }

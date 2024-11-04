@@ -1,28 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '@/utils/firebase/config';
-
-interface TopicOption {
-  id: string;
-  name: string;
-}
+import { getAllTopic } from '@/utils/topic/getAllTopic';
+import { Topic } from '@/utils/types';
 
 interface AddTopicToContentProps {
-  onSelectTopic: (topic: TopicOption) => void;
+  onSelectTopic: (topic: Topic) => void;
   selectedTopics: string[]; // Tambahkan prop untuk topik yang sudah dipilih
 }
 
 const AddTopicToContent: React.FC<AddTopicToContentProps> = ({ onSelectTopic, selectedTopics }) => {
-  const [topics, setTopics] = useState<TopicOption[]>([]);
+  const [topics, setTopics] = useState<Topic[]>([]);
 
   useEffect(() => {
     const fetchTopics = async () => {
-      const topicsCollection = collection(db, 'topic');
-      const topicsSnapshot = await getDocs(topicsCollection);
-      const topicsList = topicsSnapshot.docs.map(doc => ({
-        id: doc.id,
-        name: doc.data().name, // Pastikan field 'name' ada di dokumen topic
-      }));
+      const topicsList = await getAllTopic();
       setTopics(topicsList);
     };
 
