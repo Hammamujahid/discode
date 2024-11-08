@@ -1,5 +1,5 @@
 // utils/followFunctions.ts
-import { db, auth } from '@/utils/firebase/config';
+import { db } from '@/utils/firebase/config';
 import { User } from 'firebase/auth';
 import { doc, addDoc, collection, deleteDoc, getDocs, query, where, Timestamp } from 'firebase/firestore';
 

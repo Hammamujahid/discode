@@ -26,3 +26,10 @@ export interface SidebarProps {
     id: string;
     name: string;
   }
+
+
+  export interface UserProfile {
+    username?: string;
+    bio?: string;
+    photo_profile?: string;
+  }

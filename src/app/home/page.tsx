@@ -4,7 +4,6 @@ import Content from "./content/page";
 import { FaPlus } from "react-icons/fa";
 import { useState } from "react";
 import UploadContent from "./content/upload";
-import Layout from "./layout";
 import TopicListWithFollow from "./topic/page";
 
 const HomePage = () => {

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, Timestamp } from 'firebase/firestore';
 import { auth, db } from '@/utils/firebase/config';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -29,6 +29,10 @@ const Register = () => {
         username,
         email,
         dob,
+        bio: '',
+        photo_profile: '',
+        createdAt: Timestamp.now(),
+        updatedAt: Timestamp.now()
       });
       router.push('/login');
     } catch (error) {
